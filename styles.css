@@ -1,4 +1,5 @@
 /* Global Styles */
+/* Global Styles */
 :root {
     --primary-color: #8e44ad;
     --secondary-color: #3498db;
@@ -20,6 +21,75 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: #fff;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.7;
+}
+
+/* Paint Drops Container - Single Definition */
+#paint-drops-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.paint-drop {
+    position: absolute;
+    transform-origin: center;
+    backface-visibility: hidden;
+    animation: paintFloat 8s infinite ease-in-out;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    contain: content;
+    z-index: -1;
+}
+
+.paint-particle {
+    position: absolute;
+    transform-origin: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    contain: content;
+    z-index: -1;
+}
+
+@keyframes paintFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate3d(-5px, -10px, 0) rotate(2deg);
+    }
+    50% {
+        transform: translate3d(5px, 0, 0) rotate(-1deg);
+    }
+    75% {
+        transform: translate3d(-3px, 5px, 0) rotate(1deg);
+    }
+}
+
+/* Ensure content stays above paint */
+main, .section-container, .hero-container, 
+.eagle-nav, .footer-container, .team-card, 
+.course-card, .contact-form {
+    position: relative;
+    z-index: 1;
+}
+
+/* Rest of your CSS remains unchanged... */
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -311,7 +381,7 @@ img {
     color: var(--primary-color);
 }
 
-/* Hero Section */
+/* Hero Section with Paint Drip Effect */
 .hero {
     height: 100vh;
     min-height: 800px;
@@ -347,12 +417,33 @@ img {
     line-height: 1.2;
     color: var(--primary-color);
     position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%238e44ad'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%238e44ad'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23f1c40f'%3E%3C/path%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    z-index: -1;
+    transform: scaleY(0.8) translateY(5px);
 }
 
 .eagle-text {
     color: var(--eagle-gold);
     position: relative;
     display: inline-block;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
 }
 
 .eagle-text::before {
@@ -372,6 +463,7 @@ img {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
 }
 
 .healing-text::before {
@@ -1355,12 +1447,58 @@ img {
     animation-delay: 2s;
 }
 
+/* Full-Page 3D Paint Drops CSS */
+#paint-drops-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.paint-drop {
+    position: absolute;
+    transform-origin: center;
+    backface-visibility: hidden;
+    animation: paintWobble 2s infinite alternate;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    contain: content;
+}
+
+.paint-particle {
+    position: absolute;
+    transform-origin: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    contain: content;
+}
+
+@keyframes paintWobble {
+    0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    25% { transform: translate3d(-2px, -2px, 0) rotate(1deg); }
+    50% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+    75% { transform: translate3d(1px, 1px, 0) rotate(0.5deg); }
+    100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+/* Ensure content stays above paint */
+main, .section-container, .hero-container, .eagle-nav, .footer-container, .team-card, .course-card, .contact-form {
+    position: relative;
+    z-index: 1;
+}
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
-    
     .section-title {
         font-size: 2.5rem;
     }
@@ -1373,33 +1511,26 @@ img {
         padding-top: 120px;
         padding-bottom: 100px;
     }
-
     .hero-content {
         max-width: 100%;
         margin-bottom: 60px;
     }
-
     .hero-buttons {
         justify-content: center;
     }
-
     .hero-image {
         flex: 0 0 auto;
         width: 80%;
     }
-
     .about-content {
         flex-direction: column;
     }
-
     .mission-vision {
         flex-direction: column;
     }
-
     .contact-container {
         flex-direction: column;
     }
-
     .contact-form {
         margin-top: 50px;
     }
@@ -1419,68 +1550,105 @@ img {
         gap: 40px;
         transition: var(--transition);
         z-index: 999;
+        padding: 20px;
     }
-
     .nav-links.active {
         left: 0;
     }
-
     .nav-toggle {
         display: block;
     }
-
-    .hero-title {
-        font-size: 3.2rem;
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding: 100px 0 60px;
     }
-
+    .hero-title {
+        font-size: 2.8rem;
+        padding-bottom: 15px;
+    }
+    .hero-title::after {
+        height: 20px;
+    }
     .section-title {
         font-size: 2.2rem;
     }
-
     .team-card, .course-card {
         flex: 1 1 100%;
         max-width: 100%;
     }
-
     .carousel-item img {
-        height: 450px;
+        height: 400px;
     }
-
     .footer-links {
         flex-direction: column;
         gap: 40px;
+    }
+    .nav-container {
+        padding: 15px 20px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 576px) {
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
     }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 20px;
+    .hero-subtitle {
+        font-size: 1.1rem;
     }
-
-    .btn {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    .section-container {
+        padding: 60px 15px;
+    }
+    .carousel-item img {
+        height: 300px;
+    }
+    .carousel-caption {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+    .contact-form {
+        padding: 30px 20px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 14px;
+    }
+    .btn-submit {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    .hero-image {
         width: 100%;
     }
-
-    .carousel-item img {
-        height: 350px;
-    }
-
-    .section-container {
-        padding: 80px 20px;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-
-    .nav-container {
-        padding: 15px 20px;
+    .feather-animation {
+        width: 80px;
+        height: 80px;
+        top: -40px;
+        right: -40px;
     }
 }
 
