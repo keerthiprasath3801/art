@@ -808,7 +808,7 @@ img {
 .course-card {
     flex: 1 1 200px;
     max-width: 320px;
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
     border-radius: 20px;
     padding: 40px 30px;
     box-shadow: var(--shadow);
