@@ -551,12 +551,17 @@ img {
 }
 
 .about-text {
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
 }
 
 .about-text p {
     margin-bottom: 25px;
     font-size: 1.15rem;
+    justify-content: center;
+    align-items: center;
     line-height: 1.9;
     color: var(--text-color);
 }
@@ -1387,6 +1392,7 @@ img {
     .section-title {
         font-size: 2.5rem;
     }
+   
 }
 
 @media (max-width: 992px) {
