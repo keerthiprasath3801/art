@@ -46,7 +46,7 @@ function initPaintDropsSystem() {
             backgroundColor: color,
             borderRadius: '50%',
             transform: `translate3d(0, 0, ${zDepth}px) scale(0)`,
-            opacity: '0',
+            opacity: '0.5',
             filter: 'blur(1px)',
             boxShadow: `0 0 ${size / 5}px ${color}`,
             position: 'absolute',
@@ -58,7 +58,7 @@ function initPaintDropsSystem() {
             const duration = Math.random() * 2 + 1;
             drop.style.transition = `transform ${duration}s cubic-bezier(0.65,0,0.35,1), opacity ${duration}s ease`;
             drop.style.transform = `translate3d(0, 0, ${zDepth}px) scale(1)`;
-            drop.style.opacity = '0.8';
+            drop.style.opacity = '0.9';
 
             setTimeout(() => burst(drop, size, color, zDepth), Math.random() * 5000 + 3000);
         });
@@ -88,7 +88,7 @@ function initPaintDropsSystem() {
                 top: `${top}px`,
                 backgroundColor: color,
                 borderRadius: '50%',
-                opacity: '0.7',
+                opacity: '0.9',
                 position: 'absolute',
                 transform: `translate3d(0, 0, ${particleZ}px) scale(1)`,
                 transition: `transform ${duration}s ease-out ${delay}s, opacity ${duration}s ease-out ${delay}s`,
