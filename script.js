@@ -16,18 +16,27 @@ document.addEventListener('DOMContentLoaded', () => {
    1. Full-Page 3D Paint Drops
 ---------------------------------- */
 function initPaintDropsSystem() {
+    // Remove existing container if it exists
+    const existingContainer = document.getElementById('paint-drops-container');
+    if (existingContainer) {
+        existingContainer.remove();
+        clearInterval(window.paintDropInterval); // Clear any existing interval
+    }
+
+    // Create new container
     const container = document.createElement('div');
     container.id = 'paint-drops-container';
+    Object.assign(container.style, {
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100vw',
+        height: '100vh',
+        pointerEvents: 'none',
+        zIndex: '-1',
+        overflow: 'hidden'
+    });
     document.body.appendChild(container);
-     container.style.position = 'fixed';
-    container.style.top = '0';
-    container.style.left = '0';
-    container.style.width = '100vw';
-    container.style.height = '100vh';
-    container.style.pointerEvents = 'none'; // Allow clicks to pass through
-    container.style.zIndex = '-1'; // Send behind other content
-    
-    document.body.appendChild(container)
 
     const colors = [
         'rgba(142, 68, 173, 0.6)', 'rgba(52, 152, 219, 0.6)',
@@ -37,6 +46,8 @@ function initPaintDropsSystem() {
     ];
 
     const createDrop = () => {
+        if (document.hidden) return;
+
         const drop = document.createElement('div');
         drop.className = 'paint-drop';
 
@@ -74,6 +85,8 @@ function initPaintDropsSystem() {
     };
 
     const burst = (drop, size, color, z) => {
+        if (!drop.parentNode) return; // Skip if drop was already removed
+        
         const left = drop.offsetLeft;
         const top = drop.offsetTop;
         drop.remove();
@@ -118,19 +131,34 @@ function initPaintDropsSystem() {
     };
 
     const generateBatch = () => {
+        if (document.hidden) return;
         const count = Math.floor(Math.random() * 3) + 3;
         for (let i = 0; i < count; i++) {
-            setTimeout(() => !document.hidden && createDrop(), i * 500);
+            setTimeout(createDrop, i * 500);
         }
     };
 
+    // Initial batch of drops
     for (let i = 0; i < 8; i++) {
         setTimeout(generateBatch, i * 800);
     }
 
-    const dropInterval = setInterval(() => !document.hidden && generateBatch(), 500);
+    // Continuous generation
+    window.paintDropInterval = setInterval(generateBatch, 5000);
+
+    // Handle page visibility changes
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) clearInterval(dropInterval);
+        if (!document.hidden) {
+            // Regenerate drops when page becomes visible
+            for (let i = 0; i < 8; i++) {
+                setTimeout(generateBatch, i * 800);
+            }
+        }
+    });
+
+    // Cleanup on window unload
+    window.addEventListener('beforeunload', () => {
+        clearInterval(window.paintDropInterval);
     });
 }
 
