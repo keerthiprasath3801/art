@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./paint-drop.css">
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
      <div id="paint-drops-container"></div>
@@ -271,31 +272,31 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Your Phone">
-                        </div>
-                        <div class="form-group">
-                            <select>
-                                <option value="">Select Service</option>
-                                <option value="art-classes">Art Classes</option>
-                                <option value="art-therapy">Art Therapy</option>
-                                <option value="mural-services">Mural Services</option>
-                                <option value="english">Spoken English</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Send Message</button>
-                    </form>
+                   <form id="contact-form">
+    <div class="form-group">
+        <input type="text" name="user_name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+        <input type="email" name="user_email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+        <input type="tel" name="user_phone" placeholder="Your Phone">
+    </div>
+    <div class="form-group">
+        <select name="service">
+            <option value="">Select Service</option>
+            <option value="art-classes">Art Classes</option>
+            <option value="art-therapy">Art Therapy</option>
+            <option value="mural-services">Mural Services</option>
+            <option value="english">Spoken English</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Send Message</button>
+</form>
                 </div>
             </div>
         </div>
@@ -346,6 +347,7 @@
             </div>
         </div>
     </footer>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

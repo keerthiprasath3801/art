@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollAnimations();
     initCarousel();
-    initPaintSplashes();
+    
     initTeamCardFeathers();
     initContactForm();
     initStickyNav();
@@ -19,6 +19,15 @@ function initPaintDropsSystem() {
     const container = document.createElement('div');
     container.id = 'paint-drops-container';
     document.body.appendChild(container);
+     container.style.position = 'fixed';
+    container.style.top = '0';
+    container.style.left = '0';
+    container.style.width = '100vw';
+    container.style.height = '100vh';
+    container.style.pointerEvents = 'none'; // Allow clicks to pass through
+    container.style.zIndex = '-1'; // Send behind other content
+    
+    document.body.appendChild(container)
 
     const colors = [
         'rgba(142, 68, 173, 0.6)', 'rgba(52, 152, 219, 0.6)',
@@ -256,7 +265,7 @@ function initPaintSplashes() {
             splash.style.setProperty('--left', `${Math.random() * 100}%`);
             splash.style.setProperty('--top', `${Math.random() * 100}%`);
             splash.style.setProperty('--delay', `${Math.random() * 10}s`);
-            container.appendChild(splash);
+            
         }
     };
 
@@ -288,15 +297,95 @@ function initTeamCardFeathers() {
    8. Contact Form Submission
 ---------------------------------- */
 function initContactForm() {
-    const form = document.querySelector('.contact-form form');
-    if (!form) return;
+    const form = document.getElementById('contact-form');
+    if (!form) {
+        console.error('Form not found - make sure your form has id="contact-form"');
+        return;
+    }
 
-    form.addEventListener('submit', e => {
+    // Initialize EmailJS
+    emailjs.init('7lxVhoy8JXRzyRyB4');
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
-        form.reset();
+        
+        const submitBtn = form.querySelector('.btn-submit');
+        if (!submitBtn) {
+            console.error('Submit button not found');
+            return;
+        }
+
+        try {
+            // Show loading state
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            console.log('Attempting to send form data');
+            
+            // Send the form data
+            const response = await emailjs.sendForm(
+                'service_a6bvzmk',
+                'template_pnugeql',
+                form
+            );
+
+            console.log('EmailJS response:', response);
+            
+            if (response.status === 200) {
+                showMessage('Message sent successfully! We will contact you soon.', 'success');
+                form.reset();
+            } else {
+                throw new Error(`Unexpected status: ${response.status}`);
+            }
+            
+        } catch (error) {
+            console.error('Full error details:', error);
+            let errorMessage = 'Failed to send message. ';
+            
+            if (error.text) {
+                try {
+                    const errorData = JSON.parse(error.text);
+                    errorMessage += `EmailJS error: ${errorData.error || error.text}`;
+                } catch (e) {
+                    errorMessage += error.text;
+                }
+            } else {
+                errorMessage += error.message || 'Please try again later.';
+            }
+            
+            showMessage(errorMessage, 'error');
+        } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
     });
+
+    function showMessage(message, type) {
+        console.log(`${type.toUpperCase()}: ${message}`);
+        
+        // Remove any existing messages
+        const oldMessage = document.querySelector('.form-message');
+        if (oldMessage) oldMessage.remove();
+
+        // Create message element
+        const messageEl = document.createElement('div');
+        messageEl.className = `form-message ${type}`;
+        messageEl.textContent = message;
+        
+        // Insert after the form
+        form.parentNode.insertBefore(messageEl, form.nextSibling);
+        
+        // Auto-remove after 5 seconds
+        setTimeout(() => {
+            messageEl.remove();
+        }, 5000);
+    }
 }
+
+
+
 
 /* -------------------------------
    9. Sticky Navigation
