@@ -66,8 +66,8 @@ function initPaintDropsSystem() {
             backgroundColor: color,
             borderRadius: '50%',
             transform: `translate3d(0, 0, ${zDepth}px) scale(0)`,
-            opacity: '0.5',
-            filter: 'blur(1px)',
+            opacity: '0.8',
+            filter: 'blur(0.5px)',
             boxShadow: `0 0 ${size / 5}px ${color}`,
             position: 'absolute',
         });
