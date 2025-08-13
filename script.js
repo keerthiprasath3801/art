@@ -51,10 +51,10 @@ function initPaintDropsSystem() {
         const drop = document.createElement('div');
         drop.className = 'paint-drop';
 
-        const size = Math.random() * 30 + 10;
+        const size = Math.random() * 50 + 10;
         const left = Math.random() * 100;
         const top = Math.random() * 100;
-        const zDepth = Math.random() * 100 - 50;
+        const zDepth = Math.random() * 100 - 30;
         const color = colors[Math.floor(Math.random() * colors.length)];
         const startY = top > 50 ? `calc(${top}% + 100px)` : `calc(${top}% - 100px)`;
 
@@ -91,7 +91,7 @@ function initPaintDropsSystem() {
         const top = drop.offsetTop;
         drop.remove();
 
-        const count = Math.floor(Math.random() * 5) + 8;
+        const count = Math.floor(Math.random() * 20) + 8;
         for (let i = 0; i < count; i++) {
             const p = document.createElement('div');
             p.className = 'paint-particle';
