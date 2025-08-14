@@ -258,7 +258,7 @@ img {
     align-items: center;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-color);
+    color: var(--primary-color);
     transition: var(--transition);
 }
 
@@ -272,7 +272,7 @@ img {
 
 .logo:hover .eagle-icon {
     transform: rotate(0deg) scale(1.2);
-    color: var(--primary-color);
+    color: var(--eagle-gold);
 }
 
 .nav-links {
@@ -285,7 +285,8 @@ img {
     font-weight: 500;
     font-size: 1.1rem;
     padding: 8px 0;
-    color: var(--dark-color);
+    color: var(--primary-color);
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -301,7 +302,7 @@ img {
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--eagle-gold);
 }
 
 .nav-links a:hover::before {
