@@ -1,15 +1,15 @@
 /* Global Styles */
 :root {
-    --primary-color: #8e44ad;
+    --primary-color: #266ca9;
     --secondary-color: #3498db;
-    --accent-color: #e74c3c;
+    --accent-color: #266ca9;
     --light-color: #f5f5f5;
     --dark-color: #2c3e50;
-    --eagle-gold: #f1c40f;
-    --eagle-brown: #a67c52;
+    --eagle-gold: #01082d;
+    --eagle-brown: #266ca9;
     --eagle-dark: #1a252f;
     --text-color: #444;
-    --text-light: #777;
+    --text-light: #266ca9;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     --eagle-feather: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23f1c40f" d="M467.14 44.84c-62.55-62.48-161.67-64.78-252.28 25.73-78.61 78.52-60.98 60.92-85.75 85.66-60.46 60.39-70.39 150.83-63.64 211.17l178.44-178.25c6.26-6.25 16.4-6.25 22.65 0s6.25 16.38 0 22.63L7.04 471.03c-9.38 9.37-9.38 24.57 0 33.94 9.38 9.37 24.6 9.37 33.98 0l66.1-66.03C159.42 454.65 279 457.11 353.95 384h-98.19l147.57-49.14c49.99-49.93 36.38-36.18 46.31-46.86h-97.78l131.54-43.8c45.44-74.46 34.31-148.84-16.26-199.36z"/></svg>');
@@ -352,7 +352,7 @@ img {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 2rem;
     margin-bottom: 25px;
     line-height: 1.2;
     color: var(--primary-color);
@@ -372,8 +372,7 @@ img {
     left: 0;
     width: 100%;
     height: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%238e44ad'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%238e44ad'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23f1c40f'%3E%3C/path%3E%3C/svg%3E");
-    background-size: cover;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23266ca9'%3E%3C/path%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23266ca9'%3E%3C/path%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%233498db'%3E%3C/path%3E%3C/svg%3E");    background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
     z-index: -1;
@@ -394,7 +393,7 @@ img {
     left: 0;
     width: 100%;
     height: 20px;
-    background-color: rgba(241, 196, 15, 0.2);
+    background-color: rgba(27, 86, 149, 0.2);
     z-index: -1;
     transform: skewX(-15deg);
     border-radius: 3px;
@@ -404,7 +403,7 @@ img {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
-    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    text-shadow: 3px 3px 0 rgba(9, 67, 115, 0.1);
 }
 
 .healing-text::before {
@@ -414,7 +413,7 @@ img {
     left: 0;
     width: 100%;
     height: 20px;
-    background-color: rgba(142, 68, 173, 0.2);
+    background-color: rgba(15, 100, 197, 0.2);
     z-index: -1;
     transform: skewX(-15deg);
     border-radius: 3px;
@@ -1175,7 +1174,7 @@ img {
     height: 50px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: rgb(32, 79, 139);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2153,5 +2152,658 @@ img {
     
     .logo {
         font-size: 1.3rem;
+    }
+}
+/* Global Styles */
+:root {
+    --primary-color: #266ca9;
+    --secondary-color: #3498db;
+    --accent-color: #266ca9;
+    --light-color: #f5f5f5;
+    --dark-color: #2c3e50;
+    --eagle-gold: #266ca9; /* Changed from #01082d to match primary blue */
+    --eagle-brown: #266ca9;
+    --eagle-dark: #1a252f;
+    --text-color: #444;
+    --text-light: #266ca9;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --eagle-feather: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23266ca9" d="M467.14 44.84c-62.55-62.48-161.67-64.78-252.28 25.73-78.61 78.52-60.98 60.92-85.75 85.66-60.46 60.39-70.39 150.83-63.64 211.17l178.44-178.25c6.26-6.25 16.4-6.25 22.65 0s6.25 16.38 0 22.63L7.04 471.03c-9.38 9.37-9.38 24.57 0 33.94 9.38 9.37 24.6 9.37 33.98 0l66.1-66.03C159.42 454.65 279 457.11 353.95 384h-98.19l147.57-49.14c49.99-49.93 36.38-36.18 46.31-46.86h-97.78l131.54-43.8c45.44-74.46 34.31-148.84-16.26-199.36z"/></svg>');
+}
+
+/* Updated feather colors in existing elements */
+.eagle-icon {
+    color: var(--primary-color); /* Changed from var(--eagle-gold) */
+}
+
+.footer-logo .eagle-icon {
+    color: var(--primary-color); /* Changed from var(--eagle-gold) */
+}
+
+.footer-feathers i {
+    color: var(--primary-color); /* Changed from var(--eagle-gold) */
+}
+
+/* Wall Murals Section */
+.wall-murals {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+}
+
+.mural-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mural-tagline {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.mural-content {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.mural-expertise, .mural-benefits {
+    flex: 1;
+    min-width: 300px;
+}
+
+.expertise-list {
+    display: grid;
+    gap: 15px;
+}
+
+.expertise-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: var(--transition);
+}
+
+.expertise-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.expertise-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 25px;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.benefits-list li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.benefits-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.upcoming-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.upcoming-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Academy Section */
+.academy {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+}
+
+.academy-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.academy-tabs {
+    margin-bottom: 50px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tab-button {
+    padding: 15px 30px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(38, 108, 169, 0.3);
+}
+
+.tab-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.course-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary-color);
+}
+
+.course-item:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.featured-course {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 25px;
+    font-size: 1.1rem;
+}
+
+.therapy-content, .training-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.therapy-modules ul, .career-opportunities ul,
+.program-highlights ul, .career-pathways ul {
+    list-style: none;
+}
+
+.therapy-modules li, .career-opportunities li,
+.program-highlights li, .career-pathways li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.therapy-modules li::before, .career-opportunities li::before,
+.program-highlights li::before, .career-pathways li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.academy-features {
+    margin-top: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.feature-item i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    width: 30px;
+}
+
+/* Artesa Section */
+.artesa {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+}
+
+.artesa-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artesa-offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.offer-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.offer-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.offer-card h3 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+.offer-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Future Endeavours Section */
+.future {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+}
+
+.endeavours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.endeavour-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.endeavour-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+}
+
+.endeavour-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.endeavour-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.endeavour-item h3 {
+    color: var(--dark-color);
+    font-size: 1.3rem;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .mural-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .tab-content {
+        padding: 25px 20px;
+    }
+    
+    .therapy-content, .training-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .artesa-offers {
+        grid-template-columns: 1fr;
+    }
+    
+    .endeavours-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .offer-card, .endeavour-item {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-course {
+        grid-column: 1;
+    }
+    
+    .expertise-item {
+        padding: 10px 15px;
+    }
+    
+    .academy-intro, .artesa-intro {
+        font-size: 1.1rem;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 400px) {
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .course-item {
+        padding: 15px;
+    }
+    
+    .feature-item {
+        padding: 15px;
+    }
+    
+    .offer-card i, .endeavour-item i {
+        font-size: 2.5rem;
+    }
+}
+/* Smooth transitions for tab content */
+.tab-pane {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
+}
+
+.tab-pane.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+/* Art Therapy and Teacher Training Card Styles */
+.therapy-content,
+.training-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.therapy-modules,
+.career-opportunities,
+.program-highlights,
+.career-pathways {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary-color);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.therapy-modules:hover,
+.career-opportunities:hover,
+.program-highlights:hover,
+.career-pathways:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.therapy-modules h4,
+.career-opportunities h4,
+.program-highlights h4,
+.career-pathways h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.therapy-modules h4::after,
+.career-opportunities h4::after,
+.program-highlights h4::after,
+.career-pathways h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+.therapy-modules ul,
+.career-opportunities ul,
+.program-highlights ul,
+.career-pathways ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.therapy-modules li,
+.career-opportunities li,
+.program-highlights li,
+.career-pathways li {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+    padding-left: 40px;
+    font-weight: 500;
+}
+
+.therapy-modules li::before,
+.career-opportunities li::before,
+.program-highlights li::before,
+.career-pathways li::before {
+    content: '✓';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.therapy-modules li:hover,
+.career-opportunities li:hover,
+.program-highlights li:hover,
+.career-pathways li:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateX(5px);
+}
+
+.therapy-intro,
+.training-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design for Therapy and Training Sections */
+@media (max-width: 768px) {
+    .therapy-content,
+    .training-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .therapy-modules,
+    .career-opportunities,
+    .program-highlights,
+    .career-pathways {
+        padding: 20px;
+    }
+    
+    .therapy-modules li,
+    .career-opportunities li,
+    .program-highlights li,
+    .career-pathways li {
+        padding: 8px 12px;
+        padding-left: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .therapy-modules li::before,
+    .career-opportunities li::before,
+    .program-highlights li::before,
+    .career-pathways li::before {
+        left: 12px;
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .therapy-modules h4,
+    .career-opportunities h4,
+    .program-highlights h4,
+    .career-pathways h4 {
+        font-size: 1.1rem;
+    }
+    
+    .therapy-intro,
+    .training-intro {
+        font-size: 1rem;
     }
 }
